@@ -1,0 +1,50 @@
+/* Default tags and Bootstrap classes */
+ 
+body {
+	margin: 0;
+	padding: 50px 0;
+}
+ 
+.lead { padding: 40px 0; }
+ 
+ 
+ 
+/* Posts */
+ 
+#posts { margin: 30px auto 0; }
+.post {
+	margin: 0 0 50px;
+	text-align: center;
+	width: 280px;
+}
+.post.cs2 { width: 610px; }
+.post img { width: 100%; }
+ 
+ 
+ 
+/* Large desktop */
+ 
+@media (min-width: 1200px) {
+	.container > #posts .post { width: 255px; }
+	.container > #posts .post.cs2 { width: 560px; }
+}
+ 
+ 
+ 
+/* Portrait tablet to landscape and desktop */
+ 
+@media (min-width: 768px) and (max-width: 979px) {
+	.container-fluid > #posts .post { width: 280px; }
+	.container-fluid > #posts .post.cs2 { width: 610px; }
+	.container > #posts .post { width: 337px; }
+	.container > #posts .post.cs2 { width: 100%; }
+}
+ 
+ 
+ 
+/* Landscape phone to portrait tablet */
+ 
+@media (max-width: 767px) {
+	body { padding: 50px 20px; }
+	.post, .post.cs2 { width: 100%; }
+}
