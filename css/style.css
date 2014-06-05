@@ -28,6 +28,33 @@ body {
     border:none;
     border-radius:0;
 }
+.label{
+    font-size:0.85em;
+    text-transform:uppercase;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight:300;
+    letter-spacing:0.75pt;
+    padding:0.35em 0.5em;
+    margin:0 0.2em;
+}
+.tags{
+    margin:10px 15px;
+}
+a.label:hover{
+    text-decoration:none;
+    cursor: pointer;
+    cursor: hand;
+}
+.label-tag{
+    color:#2e2e2e;
+    background:#fff;
+}
+.label-selected{
+    color:#2e2e2e;
+    background:transparent;
+    font-weight:400;
+}
+
 .img-thumbnail {
     padding: 0px;
     border:none;
