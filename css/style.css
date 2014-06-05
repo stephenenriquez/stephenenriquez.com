@@ -1,10 +1,37 @@
 body {
 	margin: 0;
-	padding: 0;
+	padding:61px 0 0 0;
+    background:#f4f4f4;
 }
- 
+.navbar{
+    background:#fff;
+    border:none;
+    text-transform:uppercase;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    letter-spacing:0.75pt;
+    font-size:1.175em;
+    font-weight:300;
+}
+.navbar-default .navbar-nav>li>a{
+    color:#2e2e2e;
+}
+.navbar a.navbar-brand{
+    color:#000;
+    font-weight:400;
+    font-size:1.75em;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    color:#fff;
+    background:#2e2e2e;
+}
+.dropdown-menu{
+    border:none;
+    border-radius:0;
+}
 .img-thumbnail {
-    padding: 10px;
+    padding: 0px;
+    border:none;
+    border-radius:0;
 }
 .post-box {
     margin: 15px 0 15px 0;
