@@ -3,6 +3,21 @@ body {
 	padding:61px 0 0 0;
     background:#f4f4f4;
 }
+.full.background{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+	background: url('http://placekitten.com/1280/1124') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: url(../img/filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); 
+}
 .navbar{
     background:#fff;
     border:none;
