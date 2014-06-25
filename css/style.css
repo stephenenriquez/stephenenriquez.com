@@ -3,6 +3,13 @@ body {
 	padding:61px 0 0 0;
     background:#f4f4f4;
 }
+.hidden{
+    display:none;
+    visibility:hidden;
+}
+.clear{
+    clear:both;
+}
 .full.background{
     position:fixed;
     top:0;
@@ -79,7 +86,51 @@ a.label:hover{
     margin: 15px 0 15px 0;
 }
 
-#right{
+.home-page #left{
+    position:fixed;
+    width:50%;
+    top:50px;
+    right:50%;
+    padding:0;
+}
+
+
+.home-page #featured{
+    position:relative;
+    min-height:100px;
+    padding:0;
+    background:#f4f4f4;
+}
+
+.home-page #featured ul{
+   float:right;
+   display:block;
+   margin:0;
+   padding:0;
+   padding:10px 10px 10px 0px;
+   clear:both;
+}
+
+.home-page #featured ul li{
+    list-style-type:none;
+    display:block;
+    margin:0;
+    padding:0;
+}
+
+.home-page #featured p{
+    margin:0 0 1.5em 0;
+    padding:0;
+}
+
+.home-page #featured img{
+    width:120px;
+    border:6px solid #fff;
+    margin-left:10px;
+    float:right;
+}
+
+.detail-page #right{
     position:fixed;
     width:50%;
     top:0;
@@ -88,12 +139,11 @@ a.label:hover{
     bottom:0;
 }
 
-#side-image{
+.detail-page #side-image{
     position:absolute;
     top:0;
     bottom:0;
     right:0;
-    left:0px;
     background-repeat:no-repeat;
     background-position:top left;
     -webkit-background-size: cover;
@@ -108,20 +158,65 @@ a.label:hover{
 
 /* Extra small devices Phones (<768px) */
 @media (max-width: 768px) {
-    #side-image, #right{ display:none; visibility:hidden; }
+
+    .detail-page #side-image, .detail-page #right{ display:none; visibility:hidden; }
+   
+    .home-page #left{
+        width:100%;
+        right:0px;
+    }
+    .home-page #featured{
+        margin-right:0px;
+        width:100%;
+    }
+    
+    .home-page #featured ul{
+        width:100%;
+        padding-left:10px;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 992px) {
-    #side-image{ left: 120px /* 2x 60px col */}
+
+    .detail-page #side-image{ left: 120px /* 2x 60px col */}
+   
+    .home-page #left{
+    
+    }
+   
+    .home-page #featured{
+        margin-right:0px; 
+    }
+    
+    .home-page #featured ul{
+        width:360px; /* 6 columns */
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1200px) {
-    #side-image{ left: 156px /* 2x 78px col */}
+   .detail-page #side-image{ left: 156px /* 2x 78px col */}
+   
+    .home-page #featured{
+        margin-right:78px; /* 1 column */
+    }
+    
+    .home-page #featured ul{
+        width:390px; /* 5 columns */
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    #side-image{ left:190px; /* 2x 95px col */ }
+    
+    .detail-page #side-image{ left:190px; /* 2x 95px col */ }
+   
+    .home-page #featured{
+        margin-right:190px; /* 2 columns */
+    }
+    
+    .home-page #featured ul{
+        width:380px; /* 4 columns */
+    }
 }
