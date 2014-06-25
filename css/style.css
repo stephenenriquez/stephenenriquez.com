@@ -78,3 +78,50 @@ a.label:hover{
 .post-box {
     margin: 15px 0 15px 0;
 }
+
+#right{
+    position:fixed;
+    width:50%;
+    top:0;
+    right:0;
+    left:50%;
+    bottom:0;
+}
+
+#side-image{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0px;
+    background-repeat:no-repeat;
+    background-position:top left;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: url(../img/filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); 
+}
+
+
+/* Extra small devices Phones (<768px) */
+@media (max-width: 768px) {
+    #side-image, #right{ display:none; visibility:hidden; }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    #side-image{ left: 120px /* 2x 60px col */}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    #side-image{ left: 156px /* 2x 78px col */}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #side-image{ left:190px; /* 2x 95px col */ }
+}
