@@ -94,7 +94,6 @@ a.label:hover{
     padding:0;
 }
 
-
 .home-page #featured{
     position:relative;
     min-height:100px;
@@ -153,6 +152,10 @@ a.label:hover{
     filter: url(../img/filters.svg#grayscale); /* Firefox 3.5+ */
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(1); 
+}
+
+.gamma-gallery li{
+    padding:10px;
 }
 
 
