@@ -16,7 +16,7 @@ $(function() {
                 columns : 2
             }, { 
                 width : 0,
-                columns : 1
+                columns : 2
             } ]
     };
 
@@ -28,10 +28,12 @@ $(function() {
     var timeout = false;
     var delta = 200;
     $(window).resize(function() {
-        rtime = new Date();
-        if (timeout === false) {
-            timeout = true;
-            setTimeout(resizeend, delta);
+        if($(window).width() >= 500){
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(resizeend, delta);
+            }
         }
     });
 
