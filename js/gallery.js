@@ -28,7 +28,7 @@ $(function() {
     var timeout = false;
     var delta = 200;
     $(window).resize(function() {
-        if($(window).width() >= 500){
+        if($(window).width() >= 900){
             rtime = new Date();
             if (timeout === false) {
                 timeout = true;
