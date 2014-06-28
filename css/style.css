@@ -10,6 +10,12 @@ body {
 .clear{
     clear:both;
 }
+
+.navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
 .full.background{
     position:fixed;
     top:0;
