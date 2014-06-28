@@ -101,6 +101,16 @@ a.label:hover{
     background:#f4f4f4;
 }
 
+.home-page #featured img{
+    visibility:hidden;
+    display:none;
+}
+
+.home-page #featured img.active{
+    display:block;
+    visibility:visible;
+}
+
 .home-page #featured ul{
    float:right;
    display:block;
