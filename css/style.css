@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	padding:61px 0 0 0;
+	padding:53px 0 0 0;
     background:#f4f4f4;
 }
 .hidden{
@@ -9,11 +9,6 @@ body {
 }
 .clear{
     clear:both;
-}
-
-.navbar-nav>li>a {
-    padding-top: 20px;
-    padding-bottom: 10px;
 }
 
 .full.background{
@@ -40,6 +35,22 @@ body {
     font-size:1.175em;
     font-weight:300;
 }
+.gallery-page > .container, .detail-page > .container{
+    margin-top:10px;
+}
+.navbar-brand{
+    height:50px;
+}
+.logo{
+    height:28px;
+    margin-top:-4px;
+    margin-left:10px;
+}
+.navbar-nav>li>a {
+    padding-top: 23px;
+    padding-bottom: 11px;
+}
+
 .navbar-default .navbar-nav>li>a{
     color:#2e2e2e;
 }
@@ -103,7 +114,7 @@ a.label:hover{
 .home-page #featured{
     position:relative;
     min-height:100px;
-    padding:0;
+    padding:5px 0px 0px;
     background:#f4f4f4;
 }
 
@@ -122,7 +133,7 @@ a.label:hover{
    display:block;
    margin:0;
    padding:0;
-   padding:10px 10px 10px 0px;
+   padding:10px;
    clear:both;
 }
 
