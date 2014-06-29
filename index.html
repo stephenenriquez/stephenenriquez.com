@@ -1,17 +1,296 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta name="image:Logo" content=""/>
+    <meta name="image:Background" content=""/>
+    <meta name="image:Sidebar" content=""/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Stephen Enriquez</title>
+	<title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/lib/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/lib/jquery.min.js"></script>
-	<script src="js/lib/bootstrap.min.js"></script>
-	<script src="js/home.js"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style type="text/css">
+    body {
+        margin: 0;
+        padding:53px 0 0 0;
+        background:#f4f4f4;
+    }
+    .hidden{
+        display:none;
+        visibility:hidden;
+    }
+    .clear{
+        clear:both;
+    }
+
+    .home-page .full.background{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background: url('{image:Background}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); 
+    }
+    .navbar{
+        background:#fff;
+        border:none;
+        text-transform:uppercase;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        letter-spacing:0.75pt;
+        font-size:1.175em;
+        font-weight:300;
+    }
+    .gallery-page > .container, .detail-page > .container{
+        margin-top:10px;
+    }
+    .navbar-brand{
+        height:50px;
+    }
+    .logo{
+        height:28px;
+        margin-top:-4px;
+        margin-left:10px;
+    }
+    .navbar-nav>li>a {
+        padding-top: 23px;
+        padding-bottom: 11px;
+    }
+
+    .navbar-default .navbar-nav>li>a{
+        color:#2e2e2e;
+    }
+    .navbar a.navbar-brand{
+        color:#000;
+        font-weight:400;
+        font-size:1.75em;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+        color:#fff;
+        background:#2e2e2e;
+    }
+    .dropdown-menu{
+        border:none;
+        border-radius:0;
+    }
+    .label{
+        font-size:0.85em;
+        text-transform:uppercase;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight:300;
+        letter-spacing:0.75pt;
+        padding:0.35em 0.5em;
+        margin:0 0.2em;
+    }
+    .tags{
+        margin:10px 15px;
+    }
+    a.label:hover{
+        text-decoration:none;
+        cursor: pointer;
+        cursor: hand;
+    }
+    .label-tag{
+        color:#2e2e2e;
+        background:#fff;
+    }
+    .label-selected{
+        color:#2e2e2e;
+        background:transparent;
+        font-weight:400;
+    }
+
+    .img-thumbnail {
+        padding: 0px;
+        border:none;
+        border-radius:0;
+    }
+    .post-box {
+        margin: 15px 0 15px 0;
+    }
+
+    .home-page #left{
+        position:fixed;
+        width:50%;
+        top:50px;
+        right:50%;
+        padding:0;
+    }
+
+    .home-page #featured{
+        position:relative;
+        min-height:100px;
+        padding:5px 0px 0px;
+        background:#f4f4f4;
+    }
+
+    .home-page #featured img{
+        visibility:hidden;
+        display:none;
+    }
+
+    .home-page #featured img.active{
+        display:block;
+        visibility:visible;
+    }
+
+    .home-page #featured ul{
+       float:right;
+       display:block;
+       margin:0;
+       padding:0;
+       padding:10px;
+       clear:both;
+    }
+
+    .home-page #featured ul li{
+        list-style-type:none;
+        display:block;
+        margin:0;
+        padding:0;
+    }
+
+    .home-page #featured p{
+        margin:0 0 1.5em 0;
+        padding:0;
+    }
+
+    .home-page #featured img{
+        width:120px;
+        border:6px solid #fff;
+        margin-left:10px;
+        float:right;
+    }
+
+    .detail-page #right{
+        position:fixed;
+        width:50%;
+        top:0;
+        right:0;
+        left:50%;
+        bottom:0;
+    }
+
+    .detail-page #side-image{
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        background-repeat:no-repeat;
+        background-position:top left;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); 
+    }
+
+    .gamma-gallery li{
+        padding:10px;
+    }
+
+
+    /* Extra small devices Phones (<768px) */
+    @media (max-width: 768px) {
+
+        .detail-page #side-image, .detail-page #right{ display:none; visibility:hidden; }
+       
+        .home-page #left{
+            width:100%;
+            right:0px;
+        }
+        .home-page #featured{
+            margin-right:0px;
+            width:100%;
+        }
+        
+        .home-page #featured ul{
+            width:100%;
+            padding-left:10px;
+        }
+    }
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 992px) {
+
+        .detail-page #side-image{ left: 120px /* 2x 60px col */}
+       
+        .home-page #left{
+        
+        }
+       
+        .home-page #featured{
+            margin-right:0px; 
+        }
+        
+        .home-page #featured ul{
+            width:360px; /* 6 columns */
+        }
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1200px) {
+       .detail-page #side-image{ left: 156px /* 2x 78px col */}
+       
+        .home-page #featured{
+            margin-right:78px; /* 1 column */
+        }
+        
+        .home-page #featured ul{
+            width:390px; /* 5 columns */
+        }
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        
+        .detail-page #side-image{ left:190px; /* 2x 95px col */ }
+       
+        .home-page #featured{
+            margin-right:190px; /* 2 columns */
+        }
+        
+        .home-page #featured ul{
+            width:380px; /* 4 columns */
+        }
+    }
+    </style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    $(function() {
+         var DELAY = 3000;
+         var TRANS_TIME = 500;
+         var j = 0;
+         function cycle(){
+                 var jmax = $("#featured img").length -1;
+                 $("#featured img:eq(" + j + ")")
+                         .css({"opacity": 0})
+                         .addClass('active')
+                         .animate({"opacity" : "1"} ,TRANS_TIME)
+                         .animate({"opacity" : "1"}, DELAY)
+                         .animate({"opacity" : "0"}, TRANS_TIME, function(){
+                                 (j == jmax) ? j=0 : j++;
+                                 $("#featured img.active").removeClass('active');
+                                 cycle();
+                         });
+                 };
+
+         cycle();
+    });
+    </script>
 </head>
-<body class="home-page">
+<body class="{block:IndexPage}home-page{block:IndexPage} {block:PermalinkPage}detail-page{block:PermalinkPage}">
 	
     <div class="full background">&nbsp;</div>
     
@@ -24,39 +303,48 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img class="logo" alt="Stephen Enriquez" src="./img/logo.png"></a>
+          <a class="navbar-brand" href="{BlogURL}"><img class="logo" alt="{Title}" src="{image:Logo}"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="gallery.html">Portfolio</a></li>
-            <li><a href="detail.html">Weddings & Portraits</a></li>
-            <li><a href="blank.html">Events</a></li>
+            <li><a href="http://portfolio.stephenenriquez.com">Portfolio</a></li>
+            <li><a href="http://portraits.stephenenriquez.com">Weddings & Portraits</a></li>
+            <li{block:PermalinkPage} class="active"{/block:PermalinkPage}><a href="{BlogURL}events">Events</a></li>
             </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">info@stephenenriquez.com</a></li>
+            <li><a href="mailto:inquiries@stephenenriquez.com">inquiries@stephenenriquez.com</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
-	
+    {block:IndexPage} 
+	{block:Description}
 	<div id="left">
             <div id="featured">
                 <ul>
                     <li>
-                        <a href="#" class="featured">
-                            <img alt="" class="active" src="http://placekitten.com/400/400">
-                            <img alt="" src="http://placekitten.com/300/420">
-                            <img alt="" src="http://placekitten.com/400/300">
-                            <img alt="" src="http://placekitten.com/407/450">
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus tortor,  varius lacinia <a href="#">I’m a call to action link.</a></p>
-                        
+                        <p>{Description}</p>
                     </li>
                 </ul>
                 <br class="clear">
             </div>
     </div>	
-	
+    {/block:Description}
+    {/block:IndexPage}
+    {block:PermalinkPage} 
+    <div id="right">
+            <div id="side-image" style="background:url({image:Sidebar});"></div>
+    </div>
+	<div class="container">
+        <div id="left" class="col-sm-8">
+            <div class="description row">
+                {block:Posts}{block:Text}
+                    {Body}
+                {/block:Text}{/block:Posts}
+            </div>
+        </div>
+    </div>	
+    {/block:PermalinkPage}
 </body>
 </html>

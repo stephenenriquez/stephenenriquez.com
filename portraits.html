@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="image:Logo" content=""/>
+    <meta name="image:Sidebar" content=""/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://lookitscook.github.io/s.enriquez/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://lookitscook.github.io/s.enriquez/js/lib/gamma/gamma.css"/>
+    <link rel="stylesheet" type="text/css" href="http://lookitscook.github.io/s.enriquez/css/style.css"/>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/modernizr.custom.70736.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquery.min.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/bootstrap.min.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquery.masonry.min.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquery.history.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/js-url.min.js"></script>
+    <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquerypp.custom.js"></script>
+    <script type="text/javascript" src="http://lookitscook.github.io/s.enriquez/js/gallery.js"></script>
+    </head>
+</head>
+<body class="detail-page">
+	
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://stephenenriquez.tumblr.com"><img class="logo" alt="{Title}" src="{image:Logo}"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://portfolio.stephenenriquez.com">Portfolio</a></li>
+            <li><a href="http://portraits.stephenenriquez.com">Weddings & Portraits</a></li>
+            <li><a href="http://stephenenriquez.tumblr.com/events">Events</a></li>
+            </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="mailto:inquiries@stephenenriquez.com">inquiries@stephenenriquez.com</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+        
+    <div id="right">
+            <div id="side-image" style="background:url({image:Sidebar});"></div>
+    </div>
+
+	
+	<div class="container">
+        
+        <div id="left" class="col-sm-8">
+        {block:Description}        
+        <div class="description row">
+          {Description}  
+        </div>
+        {block:Description}
+    
+        <div class="gamma-container gamma-loading" id="gamma-container">
+
+					<ul class="gamma-gallery">
+
+{block:Posts}{block:Photo}
+                        <li>
+							<div data-alt="{PhotoAlt}" data-description="<h3>{PhotoAlt}</h3>">
+								<div data-src="{PhotoURL-400}"></div>
+							</div>
+						</li>
+						
+{block:Photo}{/block:Posts}
+
+                                            
+                    </ul>
+
+					<div class="gamma-overlay"></div>
+
+				</div>
+        
+        </div>
+        
+    </div>	
+	
+	<script type="text/javascript" src="http://lookitscook.github.io/s.enriquez/js/lib/gamma/gamma.js"></script>
+</body>
+</html>
