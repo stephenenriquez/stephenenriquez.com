@@ -13,6 +13,9 @@
 	<link rel="stylesheet" href="http://lookitscook.github.io/s.enriquez/css/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="http://lookitscook.github.io/s.enriquez/js/lib/gamma/gamma.css"/>
     <link rel="stylesheet" type="text/css" href="http://lookitscook.github.io/s.enriquez/css/style.css"/>
+    <style type="text/css">
+
+    </style>
     <script src="http://lookitscook.github.io/s.enriquez/js/lib/modernizr.custom.70736.js"></script>
     <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquery.min.js"></script>
     <script src="http://lookitscook.github.io/s.enriquez/js/lib/bootstrap.min.js"></script>
@@ -21,10 +24,57 @@
     <script src="http://lookitscook.github.io/s.enriquez/js/lib/js-url.min.js"></script>
     <script src="http://lookitscook.github.io/s.enriquez/js/lib/jquerypp.custom.js"></script>
     <script type="text/javascript" src="http://lookitscook.github.io/s.enriquez/js/gallery.js"></script>
+    <script>
+
+         var TUMBLR_KEY = "FZy6mbRiQOf3S6cHNBo9JbnXgw0P2NDCX9vyLODD06ENfnuk7e";
+
+  var url = "http://api.tumblr.com/v2/blog/portfolio.stephenenriquez.com/posts/photo?api_key="+TUMBLR_KEY;
+
+var offset = 15;
+var hasMore = true;
+
+  $(function(){
+
+      function loadMore(){
+
+      if(hasMore){
+
+            $.ajax({
+    dataType: "jsonp",
+    url: url+"&limit=20&offset="+offset,
+    success: function(data){
+        offset = offset + 20;
+        if(offset <= data.response.total_posts) hasMore = false;
+        $.each(data.response.posts,function(i,v){
+        var t = $(v.caption).text();
+        Gamma.add($('<li><div data-alt="'+t+'" data-description="<h3>'+t+'</h3>"><div data-src="'+v.photos[0].alt_sizes[1].url+'"></div></div></li>'));
+        });
+
+    }
+  });
+
+
+      }
+
+      }
+
+      $(window).scroll(function(){
+if ( $(window).scrollTop() == $(document).height() - $(window).height()){
+
+loadMore();
+
+}
+});
+
+
+  });
+
+
+    </script>
     </head>
 </head>
 <body class="gallery-page {block:TagPage}tag-{URLSafeTag}{/block:TagPage}">
-	
+
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -34,32 +84,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://stephenenriquez.tumblr.com"><img class="logo" alt="{Title}" src="{image:Logo}"></a>
+          <a class="navbar-brand" href="http://stephenenriquez.com/"><img class="logo" alt="{Title}" src="{image:Logo}"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://portfolio.stephenenriquez.com">Portfolio</a></li>
             <li><a href="http://portraits.stephenenriquez.com">Weddings & Portraits</a></li>
-            <li><a href="http://stephenenriquez.tumblr.com/events">Events</a></li>
+            <!-- <li><a href="http://stephenenriquez.tumblr.com/events">Events</a></li> -->
             </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="mailto:inquiries@stephenenriquez.com">inquiries@stephenenriquez.com</a></li>
+            <li><a href="mailto:stephen.enr@gmail.com">stephen.enr@gmail.com</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
-	
+
 	<div class="container">
-        
-        <div class="tags">
+
+        <!-- <div class="tags">
             <a class="label label-tag" href="{BlogURL}">All</a>
             <a class="label label-selected" href="{BlogURL}tagged/local-famrs">Local Farms</a>
             <a class="label label-tag" href="{BlogURL}tagged/madison">Madison</a>
             <a class="label label-tag" href="{BlogURL}tagged/new-york">New York</a>
             <a class="label label-tag" href="{BlogURL}tagged/plein-air">Plein Air</a>
-        </div>
-    
+        </div> -->
+
         <div class="gamma-container gamma-loading" id="gamma-container">
 
 					<ul class="gamma-gallery">
@@ -69,18 +119,18 @@
 								<div data-src="{PhotoURL-400}"></div>
 							</div>
 						</li>
-						
+
 {block:Photo}{/block:Posts}
 
-                                            
+
                     </ul>
 
 					<div class="gamma-overlay"></div>
 
 				</div>
-				
-    </div>	
-	
+
+    </div>
+
 	<script type="text/javascript" src="http://lookitscook.github.io/s.enriquez/js/lib/gamma/gamma.js"></script>
 </body>
 </html>
