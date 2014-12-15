@@ -1,6 +1,6 @@
-s.enriquez
+stephenenriquez.com
 ==========
 
 Theme for stephenenriquez.com
 
-Demo: http://lookitscook.github.io/s.enriquez/
+Demo: http://www.stephenenriquez.com
